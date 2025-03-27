@@ -35,7 +35,7 @@ account before the account owener could secure their information.
 
 
 # Univariate Analysis 
-### Fraud vs Genuine
+### Fraud vs Not Fraud
 
 ![screenshots](images/FraudvsNotFraud.png)
 
