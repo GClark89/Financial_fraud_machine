@@ -36,5 +36,25 @@ account before the account owener could secure their information.
 
 ## Univariate Analysis 
 
-*Fraud vs Not fraud*
 ![screenshots](images/FraudvsNotFraud.png)
+
+* The dataset is highly imbalanced, with 99.9% of transactions being non-fraudulent (6,354,407 accounts).
+* In contrast, only 0.01% of transactions are flagged as fraudulent (8,213 accounts).
+
+This imbalance is crucial to consider when building a fraud detection model, 
+as traditional machine learning models may struggle to identify fraudulent cases due to their rarity.
+
+![screenshots](images/FlaggedFraudVsNot.png)
+
+* Flagged as fraud: Only 6 transactions
+* Not flagged: 6,362,604
+
+This indicates that very few cases are proactively flagged, suggesting that our fraud 
+dection
+system must be highly sensitve to subtle fradulent patterns. 
+
+![screenshot](images/TypesofBreakdownsPieC.png)
+![screenshot](images/CountOfTypes.png)
+
+* Payment and cash_out are the 2 most common types within this data 
+
