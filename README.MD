@@ -35,6 +35,7 @@ account before the account owener could secure their information.
 
 
 ## Univariate Analysis 
+### Fraud vs Not Fraud 
 
 ![screenshots](images/FraudvsNotFraud.png)
 
@@ -88,7 +89,4 @@ When we zoom into the "Fraud" category, the only transaction types observed are 
 * This section dives deeper into the types of fraud, which we initially saw in the first bar plot.
 * Transfers emerge as the most frequent type of fraudulent transaction, surpassing all other transaction types in the "Fraud" category.
 
-2. IsFlaggedFraud_df, i noticed that only transfers were being marked as fraud. 
 
-
-3. Lastly under IsNotFlaggedFraud_df
