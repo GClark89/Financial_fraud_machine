@@ -311,7 +311,10 @@ to evaluate the model’s performance in distinguishing between fraud and non-fr
 - This explains why accuracy is misleading - predicting "non-fraud" all the time would still be approx 99.9 accurate 
 
 *In Summary*
-* The high AUC suggests that the model is good at distinguishing between the two classes overall, but the lower recall for class 1 suggested that the model is missing a significant portion of the fraud cases (false negatives). The reason for this being an imbalanced dataset, where the non-fraud class (class 0) is much larger than the fraud class (class 1), causing the model to be more biased toward predicting the majority class (non-fraud).
+* The high AUC suggests that the model is good at distinguishing between the two classes overall, 
+but the lower recall for class 1 suggested that the model is missing a significant portion of the fraud cases (false negatives). 
+The reason for this being an imbalanced dataset, where the non-fraud class (class 0) is much larger than the fraud class (class 1), 
+causing the model to be more biased toward predicting the majority class (non-fraud).
 
 
 
