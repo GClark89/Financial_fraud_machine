@@ -58,3 +58,22 @@ system must be highly sensitve to subtle fradulent patterns.
 
 * Payment and cash_out are the 2 most common types within this data 
 
+*Made dataframes where all the acounts were pulled for Fraud, Not Fraud, Flagged and Not Flagged 
+and looked for any patterns*
+
+```python 
+
+#This pulls all the data where the account was fraud
+fraud = df[df["isFraud"] == 1] 
+#Pulls the data where the accounts were not fraud
+Notfraud = df[df["isFraud"] == 0]
+
+#Pulls all the data for what and what is not flagged fraud 
+IsFlaggedFraud_df = df[df["isFlaggedFraud"] == 1]
+IsNotFlaggedFraud_df = df[df["isFlaggedFraud"] == 0]
+
+```
+
+
+
+
