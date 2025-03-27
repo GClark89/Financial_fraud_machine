@@ -1,4 +1,4 @@
-![screenshots1](images/FraudPic.jpeg)
+![screenshots](images/FraudPic.jpeg)
 
 # Fraud Detection Analysis and Prediction :mag:
 
@@ -13,7 +13,7 @@ machine learning, figure out what accounts are fraud or not. Dive in to explore 
 * Scikit-learn
 
 
-## # Dataset Overview 
+## Dataset Overview 
 We will take a look at our Financial Data Set and give a few insights and points and draw a hypothesis given what we've looked at...
 
 * Step: A unit of time that represents hours in the data. Think of this as the timestamp of the transaction (e.g hour 1, hour 2....hour 534, ...)
@@ -32,5 +32,9 @@ We will take a look at our Financial Data Set and give a few insights and points
 
 * IsFraud: Was this simulated transaction actually fradulent? In this case, we condier "fraud" to be malicious transaction that aimed to transfer funds out of a victim's bank
 account before the account owener could secure their information. 
----
 
+
+## Univariate Analysis 
+
+*Fraud vs Not fraud*
+![screenshots]images/FraudvsNotFraud.png
