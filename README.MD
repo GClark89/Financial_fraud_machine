@@ -72,8 +72,23 @@ Notfraud = df[df["isFraud"] == 0]
 IsFlaggedFraud_df = df[df["isFlaggedFraud"] == 1]
 IsNotFlaggedFraud_df = df[df["isFlaggedFraud"] == 0]
 
-```
+``` 
+* As you explore the EDA you'll see these different dataframes and what i noticed is that...
+
+1. under the fraud dataframe, transfers and cash out are the 2 most common types. 
+
+![screeshot](images/CountofFraudwithHue.png)
+
+* Over 95% of the samples fall into the "Not Fraud" category (represented as 0), while only a small fraction belong to the "Fraud" category.
+* Among the "Not Fraud" samples, Payment and Cash Out are the most common types of transactions.
+* Interestingly, the Debit type is the least common under "Not Fraud".
+When we zoom into the "Fraud" category, the only transaction types observed are Cash Out and Transfers.
+
+![screenshot](images/whatTypesAreFraud.png)
+* This section dives deeper into the types of fraud, which we initially saw in the first bar plot.
+* Transfers emerge as the most frequent type of fraudulent transaction, surpassing all other transaction types in the "Fraud" category.
+
+2. IsFlaggedFraud_df, i noticed that only transfers were being marked as fraud. 
 
 
-
-
+3. Lastly under IsNotFlaggedFraud_df
