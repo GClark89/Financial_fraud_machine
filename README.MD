@@ -207,3 +207,68 @@ showing higher median values and a large range.
 -  The majority of transactions are not flagged as fraud (blue points), while only a small portion of transactions are flagged as fraud (red points). This indicates that fraud-flagging is relatively rare.
 - The few red points suggest that only a small subset of transactions gets flagged, meaning the fraud detection system has strict criteria for flagging fraud.(only anything over 200,00 is flagged)
 
+# Machine Learning Modeling 
+
+## Logistic Regression 
+
+``` python
+
+from sklearn.linear_model import LogisticRegression
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import roc_curve, auc
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# read in the cleanded data 
+file_path = r"data/cleaned_data.csv"
+df = pd.read_csv(file_path)
+
+# Features: All columns except "isFraud"
+X = df.drop(columns=["isFraud"])  
+
+# Target: "isFraud" column
+y = df["isFraud"]  
+
+#Split data into separate training test set
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
+
+
+
+# Initialize the model
+model = LogisticRegression()
+model.fit(X_train , y_train)
+
+#get predicted probabilites for the fraud class 
+y_prob = model.predict_proba(X_test)[:,1]
+
+#Calculate the Fasle positive rate , True positive rate  and thresholds using roc_curve
+fpr, tpr, thresholds = roc_curve(y_test, y_prob)
+
+# Calculate Youden's J statistic: sensitivity + specificity - 1
+youden_j = tpr - fpr
+
+# Find the index of the best threshold
+best_threshold_index = youden_j.argmax()
+
+# Get the best threshold and corresponding FPR and TPR 
+best_threshold = thresholds[best_threshold_index]
+best_fpr = fpr[best_threshold_index]
+best_tpr = tpr[best_threshold_index]
+
+
+#Calculate the Area under curve 
+roc_auc = auc(fpr,tpr)
+
+print( "area under curve is ", roc_auc)
+
+```
+- This Python script builds a logistic regression model to predict fraud using a cleaned dataset. It first loads the data, separating the features (X) and target variable (y), 
+and then splits the data into training and test sets. The logistic regression model is trained on the training set and used to predict probabilities for 
+the fraud class on the test set. The script calculates the Receiver Operating Characteristic (ROC) curve and identifies the best threshold for classification 
+by maximizing Youden's J statistic, which balances sensitivity and specificity. Finally, it computes and prints the Area Under the Curve (AUC) 
+to evaluate the model’s performance in distinguishing between fraud and non-fraud cases.
+
+
+
