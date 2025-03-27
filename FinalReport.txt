@@ -22,7 +22,7 @@ out what transactions were fraud , with the class imbalance, i felt it wouldn't 
 if there is any. 
 
 
-v. What was your final F1 Score? 
+iii. What was your final F1 Score? 
 
 The final f1 score was .60. This indicates that the logistic regression model managed to strike a decent balance between precision and recall. 
 In the context of fraud detection, it means the model was able to identify some fraudulent transactions, but it still made some errors, 
