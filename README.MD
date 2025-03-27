@@ -35,7 +35,7 @@ account before the account owener could secure their information.
 
 
 ## Univariate Analysis 
-### Fraud vs Not Fraud 
+### Fraud vs Genuine
 
 ![screenshots](images/FraudvsNotFraud.png)
 
@@ -45,6 +45,7 @@ account before the account owener could secure their information.
 This imbalance is crucial to consider when building a fraud detection model, 
 as traditional machine learning models may struggle to identify fraudulent cases due to their rarity.
 
+### Flagged Transactions vs Unflagged Transactions
 ![screenshots](images/FlaggedFraudVsNot.png)
 
 * Flagged as fraud: Only 6 transactions
@@ -54,6 +55,7 @@ This indicates that very few cases are proactively flagged, suggesting that our 
 dection
 system must be highly sensitve to subtle fradulent patterns. 
 
+### Count Types
 ![screenshot](images/TypesofBreakdownsPieC.png)
 ![screenshot](images/CountOfTypes.png)
 
@@ -74,19 +76,50 @@ IsFlaggedFraud_df = df[df["isFlaggedFraud"] == 1]
 IsNotFlaggedFraud_df = df[df["isFlaggedFraud"] == 0]
 
 ``` 
-* As you explore the EDA you'll see these different dataframes and what i noticed is that...
+* I looked at a few of these dataframes for patterns 
 
-1. under the fraud dataframe, transfers and cash out are the 2 most common types. 
+1. ## *fraud Dataframe* 
+![screenshot](images/Fraud Data Frame.png)
+* Only transfers were being marked fraud 
 
-![screeshot](images/CountofFraudwithHue.png)
-
-* Over 95% of the samples fall into the "Not Fraud" category (represented as 0), while only a small fraction belong to the "Fraud" category.
-* Among the "Not Fraud" samples, Payment and Cash Out are the most common types of transactions.
-* Interestingly, the Debit type is the least common under "Not Fraud".
-When we zoom into the "Fraud" category, the only transaction types observed are Cash Out and Transfers.
-
+![screenshot](images/CountofFraudwithHue.png)
 ![screenshot](images/whatTypesAreFraud.png)
-* This section dives deeper into the types of fraud, which we initially saw in the first bar plot.
-* Transfers emerge as the most frequent type of fraudulent transaction, surpassing all other transaction types in the "Fraud" category.
+
+### *Count of Fraud with hue*
+   - We see a class imbalance here as more than 95% of samples belong to not fraud (0) compared to is Fraud
+   - Payment and Cash out are the most common types under not fraud 
+   - Debit is the least common type under not fraud 
+   - Only types we see under fraud is Cash out and transfers
+
+### *What types are fraud*
+  - This looks deeper into the isFraud types from the first bar plot
+  - Transfers are the most common type under fraud 
+
+2. ## *IsFlaggedFraud_df*
+![screenshot](images/FlaggedFraudDF.png)
+- Only transfers were being flagged fraud 
+
+3. ## *IsNotFlaggedFraud_df*
+![screenshot](images/IsNotFlaggedDF.png)
+- Some accounts that were fraud , weren't flagged as fraud 
+
+
+![screenshot](images/FlaggedFraudWHue.png)
+![screenshot](images/FlaggedFraudTypes.png)
+![screenshot](images/FraudNotFlagged.png)
+
+### *Count of flagged fraud with hue*
+- Shows flagged fraud cases by transaction type
+- Most transactions were NOT flagged as fraud
+- Payment , Cash_out and Cash in are the most common transaction types
+- Only Transfers were flagged (you can see this in the bar plot but we do notice this very well in the IsFlaggedFraud_df dataframe)
+### *What types are flagged as fraud?*
+- Highlights transaction types that get flagged as fraud
+- Flagged fraud cases are mostly Transfers
+### *Fraud cases that weren't flagged as fraud*
+- Focuses on fraud cases that were missed (not flagged)
+- Useful for identifying gaps in fraud detection
+- We see that there are a cases of fraud that weren't flagged
+- This systems has gaps due to failing fradulent activity effectively
 
 
