@@ -270,5 +270,47 @@ the fraud class on the test set. The script calculates the Receiver Operating Ch
 by maximizing Youden's J statistic, which balances sensitivity and specificity. Finally, it computes and prints the Area Under the Curve (AUC) 
 to evaluate the model’s performance in distinguishing between fraud and non-fraud cases.
 
+![screenshot](images/ROCCURVE.png)
+- The red dot represents the optimal threshold found using Youden’s J statistic.
+- The best threshold value = 0.0035, meaning that if a predicted fraud probability is ≥ 0.0035, it will be classified as fraud
+   - This threshold is chosen to maximize the difference between TPR and FPR, balancing sensitivity and specificity
+- AUC of 0.99 shows the model is generally strong at differentiating between classes.
+
+![screenshot](images/ConfusionMatrix.png)
+- True Positive - 1270817
+- True Negative - 732
+- False Positive - 87
+- False Negative 888
+
+![screenshot](images/ClassReport.png)
+# Results from our classification report 
+
+*Non-Fraud "0"*
+ - Precision -- 1.00: When the model predicts a transaction as non-fraud, it is almost always correct 
+ - Recall --  1.00: The model catches all non-fraud cases
+ - F1- Score -- 1.00: A perfect balance of precision and recall, meaning this class is very well predicted 
+- Support -- 1270904: amount of non-fraud cases used for this report 
+
+*Fraud "1"*
+ - Precision -- 0.89: When the model predicts fraud , it is correct 89% of the time
+ - Recall -- 0.45: The model only detects 45% of the actual fraud cases, missing more than half of the fradulent transactions 
+   - we have fradulent transactions slipping through undected, which could lead to losses and security risks
+ - F-1 Score -- 0.60: the balance between precision and recall shows room for imporvement in fraud detection
+ - Support -- 1620: Amount of fraud cases used for this report 
+
+*Macro vs Weighted Averages*
+- Macro Average -- 1.00 Precision, 1.00 recall , 1.00 F1- Score 
+ - Treats both classes equally and shows that fraud detection is significantly lower than non-fraud detection
+- Weighted Average -- 1.00 Precision , 1.00 Recall, 1.00 F1 score 
+ - This dataset is highly imbalanced , so the weighted avg. is dominated by class 0 
+- Support-- 1272524: Amount of total transactions used (fraud & non-fraud)
+
+*A closer look into support*
+- Class Imbalance 
+- There are far fewer fraud cases (1,620) than non-fraud cases(1,270,904) used for this report
+- This explains why accuracy is misleading - predicting "non-fraud" all the time would still be approx 99.9 accurate 
+
+*In Summary*
+* The high AUC suggests that the model is good at distinguishing between the two classes overall, but the lower recall for class 1 suggested that the model is missing a significant portion of the fraud cases (false negatives). The reason for this being an imbalanced dataset, where the non-fraud class (class 0) is much larger than the fraud class (class 1), causing the model to be more biased toward predicting the majority class (non-fraud).
 
 
