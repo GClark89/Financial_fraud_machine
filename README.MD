@@ -2,8 +2,8 @@
 
 # Fraud Detection Analysis and Prediction :mag:
 
-Welocome to the Fraud Analysis and Prediction project :rocket: We will be looking into a large data set and with using 
-machine learning figure out what accounts are fraud or not. Dive in to explore the data, modeling process and key findings.
+Welcome to the Fraud Analysis and Prediction project :rocket: We will be looking into a large data set and with using 
+machine learning, figure out what accounts are fraud or not. Dive in to explore the data, modeling process and key findings.
 
 ## Modules/Libaries
 * Pandas
@@ -12,7 +12,9 @@ machine learning figure out what accounts are fraud or not. Dive in to explore t
 * MatplotLib
 * Scikit-learn
 
-#We will take a look at our Financial Data Set and give a few insights and points and draw a hypothesis given what we've looked at...
+
+## # Dataset Overview 
+We will take a look at our Financial Data Set and give a few insights and points and draw a hypothesis given what we've looked at...
 
 * Step: A unit of time that represents hours in the data. Think of this as the timestamp of the transaction (e.g hour 1, hour 2....hour 534, ...)
 
