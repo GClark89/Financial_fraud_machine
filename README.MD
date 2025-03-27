@@ -55,7 +55,7 @@ This indicates that very few cases are proactively flagged, suggesting that our 
 dection
 system must be highly sensitve to subtle fradulent patterns. 
 
-### Count Types
+### Transaction Types
 ![screenshot](images/TypesofBreakdownsPieC.png)
 ![screenshot](images/CountOfTypes.png)
 
@@ -79,7 +79,7 @@ IsNotFlaggedFraud_df = df[df["isFlaggedFraud"] == 0]
 * I looked at a few of these dataframes for patterns 
 
 1. ## *fraud Dataframe* 
-![screenshot](images/Fraud Data Frame.png)
+![screenshot](images/FraudDataFrame.png)
 * Only transfers were being marked fraud 
 
 ![screenshot](images/CountofFraudwithHue.png)
