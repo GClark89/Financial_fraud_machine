@@ -34,7 +34,7 @@ We will take a look at our Financial Data Set and give a few insights and points
 account before the account owener could secure their information. 
 
 
-## Univariate Analysis 
+# Univariate Analysis 
 ### Fraud vs Genuine
 
 ![screenshots](images/FraudvsNotFraud.png)
@@ -78,7 +78,7 @@ IsNotFlaggedFraud_df = df[df["isFlaggedFraud"] == 0]
 ``` 
 * I looked at a few of these dataframes for patterns 
 
-1. ## *fraud Dataframe* 
+1. ## *Fraud Dataframe* 
 ![screenshot](images/FraudDataFrame.png)
 * Only transfers were being marked fraud 
 
@@ -122,4 +122,26 @@ IsNotFlaggedFraud_df = df[df["isFlaggedFraud"] == 0]
 - We see that there are a cases of fraud that weren't flagged
 - This systems has gaps due to failing fradulent activity effectively
 
+## Distribution of Step & Amount 
+![screenshot](images/DistributionOfStep.png)
+![screenshot](images/DistributionOfAmount.png)
 
+### *Distribution of Step*
+  - The counts where transactionas occurred at a time stamp, 
+  - the most common time stamps were  around 1, 200, & 300, we can assume that since there were alot of movements here
+  - potential movements where step increaseses could be were fraud occurred 
+  - Decline in activity over time 
+
+### *Distribution of Amounts*
+  - The majority of transactions fall within a specific range, with a clear concentration around 10^5
+  - We have two main peaks, (Bimodal distrubution), meaning transactions are happening aroind two diffrent value ranges
+  - As the amounts increase the transactions decrease , investigating those outliers could be where fraud is occurring 
+
+# Bivariate Analysis 
+
+## Amount vs Step 
+![screenshot](images/AmountvsStep.png)
+
+ With in this scatter plot we see that a lot of occurrances happen around the 300 step.
+- We see a lot of payment transactions here 
+- we have seen a lot of payment and cash out types under fraud, could this be happening at this time interval? we can assume so
